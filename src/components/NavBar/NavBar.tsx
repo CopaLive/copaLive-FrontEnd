@@ -11,22 +11,7 @@ export default function NavBar() {
                 CopaLive
               </h1>
             </div>
-          </Link>
-
-          {/* Navigation */}
-          {/*<nav className="flex items-center gap-2">
-            <Link
-              to="/login"
-              className={`flex items-center gap-2 px-4 py-2 rounded-lg transition-all ${
-                location.pathname === "/login"
-                  ? "bg-white text-green-700 shadow-md"
-                  : "text-white hover:bg-green-600"
-              }`}
-            >
-              <LogIn className="w-5 h-5" />
-              <span className="hidden sm:inline font-medium">Connexion</span>
-            </Link>
-          </nav>*/}
+          </Link>          
         </div>
       </div>
     </nav>
