@@ -10,13 +10,10 @@ on:
 jobs:
   setup:
     runs-on: ubuntu-latest
-    outputs:
-      node-path: ${{ steps.setup-node.outputs.node-path }}
     steps:
       - uses: actions/checkout@v4
 
       - name: Setup Node.js
-        id: setup-node
         uses: actions/setup-node@v3
         with:
           node-version: 18
@@ -32,6 +29,8 @@ jobs:
     needs: setup
     steps:
       - uses: actions/checkout@v4
+      - name: Setup pnpm
+        run: npm install -g pnpm
       - name: Build project
         run: pnpm build
 
@@ -40,6 +39,8 @@ jobs:
     needs: setup
     steps:
       - uses: actions/checkout@v4
+      - name: Setup pnpm
+        run: npm install -g pnpm
       - name: Run lint
         run: pnpm lint
 
@@ -48,5 +49,7 @@ jobs:
     needs: setup
     steps:
       - uses: actions/checkout@v4
+      - name: Setup pnpm
+        run: npm install -g pnpm
       - name: Check dependencies for vulnerabilities
         run: pnpm audit --audit-level moderate
