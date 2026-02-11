@@ -1,0 +1,85 @@
+export type GameStage = 
+  | 'FINAL'
+  | 'THIRD_PLACE'
+  | 'SEMI_FINALS'
+  | 'QUARTER_FINALS'
+  | 'LAST_16'
+  | 'LAST_32'
+  | 'LAST_64'
+  | 'ROUND_4'
+  | 'ROUND_3'
+  | 'ROUND_2'
+  | 'ROUND_1'
+  | 'GROUP_STAGE'
+  | 'PRELIMINARY_ROUND'
+  | 'QUALIFICATION'
+  | 'QUALIFICATION_ROUND_1'
+  | 'QUALIFICATION_ROUND_2'
+  | 'QUALIFICATION_ROUND_3'
+  | 'PLAYOFF_ROUND_1'
+  | 'PLAYOFF_ROUND_2'
+  | 'PLAYOFFS'
+  | 'REGULAR_SEASON'
+  | 'CLAUSURA'
+  | 'APERTURA'
+  | 'CHAMPIONSHIP'
+  | 'RELEGATION'
+  | 'RELEGATION_ROUND';
+
+export const GAME_STAGES = {
+  FINAL: 'FINAL',
+  THIRD_PLACE: 'THIRD_PLACE',
+  SEMI_FINALS: 'SEMI_FINALS',
+  QUARTER_FINALS: 'QUARTER_FINALS',
+  LAST_16: 'LAST_16',
+  LAST_32: 'LAST_32',
+  LAST_64: 'LAST_64',
+  ROUND_4: 'ROUND_4',
+  ROUND_3: 'ROUND_3',
+  ROUND_2: 'ROUND_2',
+  ROUND_1: 'ROUND_1',
+  GROUP_STAGE: 'GROUP_STAGE',
+  PRELIMINARY_ROUND: 'PRELIMINARY_ROUND',
+  QUALIFICATION: 'QUALIFICATION',
+  QUALIFICATION_ROUND_1: 'QUALIFICATION_ROUND_1',
+  QUALIFICATION_ROUND_2: 'QUALIFICATION_ROUND_2',
+  QUALIFICATION_ROUND_3: 'QUALIFICATION_ROUND_3',
+  PLAYOFF_ROUND_1: 'PLAYOFF_ROUND_1',
+  PLAYOFF_ROUND_2: 'PLAYOFF_ROUND_2',
+  PLAYOFFS: 'PLAYOFFS',
+  REGULAR_SEASON: 'REGULAR_SEASON',
+  CLAUSURA: 'CLAUSURA',
+  APERTURA: 'APERTURA',
+  CHAMPIONSHIP: 'CHAMPIONSHIP',
+  RELEGATION: 'RELEGATION',
+  RELEGATION_ROUND: 'RELEGATION_ROUND',
+} as const;
+
+export const GAME_STAGE_LABELS: Record<GameStage, string> = {
+  FINAL: 'Finale',
+  THIRD_PLACE: 'Petite finale',
+  SEMI_FINALS: 'Demi-finales',
+  QUARTER_FINALS: 'Quarts de finale',
+  LAST_16: 'Huitièmes de finale',
+  LAST_32: '1/16e de finale',
+  LAST_64: '1/32e de finale',
+  ROUND_4: 'Tour 4',
+  ROUND_3: 'Tour 3',
+  ROUND_2: 'Tour 2',
+  ROUND_1: 'Tour 1',
+  GROUP_STAGE: 'Phase de groupes',
+  PRELIMINARY_ROUND: 'Tour préliminaire',
+  QUALIFICATION: 'Qualifications',
+  QUALIFICATION_ROUND_1: 'Qualifications - Tour 1',
+  QUALIFICATION_ROUND_2: 'Qualifications - Tour 2',
+  QUALIFICATION_ROUND_3: 'Qualifications - Tour 3',
+  PLAYOFF_ROUND_1: 'Barrages - Tour 1',
+  PLAYOFF_ROUND_2: 'Barrages - Tour 2',
+  PLAYOFFS: 'Barrages',
+  REGULAR_SEASON: 'Saison régulière',
+  CLAUSURA: 'Clausura',
+  APERTURA: 'Apertura',
+  CHAMPIONSHIP: 'Championnat',
+  RELEGATION: 'Relégation',
+  RELEGATION_ROUND: 'Tour de relégation',
+};
