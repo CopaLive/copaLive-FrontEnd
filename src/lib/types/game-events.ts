@@ -1,9 +1,13 @@
+import type { Team } from "./game";
+
 export type Goal = {
   minute: number;
   scorer: {
     id: string;
     name: string;
   }
+  team: Team;
+  type: 'NORMAL' | 'PENALTY' | 'OWN_GOAL';
 }
 
 export type Subs = {
@@ -42,10 +46,7 @@ export const CARD = {
 
 export type Booking = {
   minute: number;
-  team: {
-    id: string;
-    name: string;
-  }
+  team: Team;
   player: {
     id: string;
     name: string;
