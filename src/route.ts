@@ -13,5 +13,9 @@ export const routes: RouteObject = {
       path: "/games/:id",
       Component: lazy(() => import("./pages/GameDetails")),
     },
+    {
+      path: "/tournament",
+      Component: lazy(() => import("./pages/TournamentBracket")),
+    },
   ]
 }
