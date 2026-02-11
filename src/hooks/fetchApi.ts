@@ -16,11 +16,11 @@ async function fetchApi<T>(endpoint: string, options?: RequestInit): Promise<T> 
   
   try {
     const response = await fetch(url, {
+      ...options,
       headers: {
         'Content-Type': 'application/json',
         ...options?.headers,
-      },
-      ...options,
+      }
     });
 
     // Gestion des erreurs HTTP

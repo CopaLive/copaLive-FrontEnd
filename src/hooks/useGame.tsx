@@ -8,12 +8,13 @@ export function useGame() {
   const { id } = useParams();
   
   const { data, isLoading, error } = useQuery({
-    queryKey: ['matches'],
+    queryKey: ['match', id],
     queryFn: async () => fetchApi<Game>(`/game/${id}`),
-    // Polling intelligent : rafraîchir si des matchs sont en direct
+    // Rafraîchir si des matchs sont en direct
     refetchInterval: 30000,
     // Données fraîches pendant 30 secondes
-    staleTime: 30000
+    staleTime: 30000,
+    enabled: Boolean(id)
   });
   
   return { data, isLoading, error };
