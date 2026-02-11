@@ -15,8 +15,13 @@ import { isPendingGame } from "@/lib/utils/gameStatus";
 import { ChevronRight } from "lucide-react";
 import { Button } from "../ui/button";
 
-export default function GameCard(props: { game: Game }) {
-  const { game } = props;
+type GameCardProps = {
+  game: Game,
+  seeMore: boolean
+}
+
+export default function GameCard(props: GameCardProps) {
+  const { game, seeMore } = props;
   const date = useMemo(() => formatDate(game.date), [game.date])
   
   const isPending = isPendingGame(game.status)
@@ -57,14 +62,14 @@ export default function GameCard(props: { game: Game }) {
           </div>
         </div>
       </CardContent>
-      <CardFooter>
+      {seeMore ?? <CardFooter>
         <div className="mt-6 pt-4 border-t border-slate-200 flex items-center justify-center text-green-600 font-medium group-hover:text-green-700 w-full">
           <Button variant="ghost">
             <span>Voir les détails</span>
             <ChevronRight className="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" />
           </Button>
         </div>
-      </CardFooter>
+      </CardFooter>}
     </Card>
   )
 }

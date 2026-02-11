@@ -54,7 +54,7 @@ export default function GamesList() {
       <div className="grid gap-6">
         {mockGames.map(game => (
           <Link to={`/games/${game.id}`}>
-            <GameCard key={game.id} game={game} />
+            <GameCard key={game.id} game={game} seeMore={true} />
           </Link>
         ))}
       </div>
