@@ -38,7 +38,7 @@ export type Card = "RED" | "YELLOW";
 export const CARD = {
   RED: "RED",
   YELLOW: "YELLOW"
-};
+} as const;
 
 export type Booking = {
   minute: number;
@@ -52,3 +52,20 @@ export type Booking = {
   };
   card: Card;
 }
+
+export type GameEventType = "GOAL" | "SUBS" | "PENALTY" | "BOOKING";
+export const GAME_EVENT = {
+  GOAL: "GOAL",
+  SUBS: "SUBS",
+  PENALTY: "PENALTY",
+  BOOKING: "BOOKING"
+} as const;
+
+export type GameEvent = {
+  type: GameEventType;
+  minute: number;
+  goal?: Goal;
+  subs?: Subs;
+  penalty?: Penalty;
+  booking?: Booking;
+};

@@ -1,4 +1,5 @@
 import type { GameStage } from "./competition-stages";
+import type { Booking, Goal, Penalty, Subs } from "./game-events";
 import type { GameStatus } from "./game-status";
 
 export type Team = {
@@ -16,5 +17,9 @@ export type Game = {
   status: GameStatus;
   stage: GameStage;
   date: string;
+  goals?: Goal[];
+  substitutions?: Subs[];
+  penalties?: Penalty[];
+  bookings?: Booking[]
 }
 

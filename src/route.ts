@@ -8,6 +8,10 @@ export const routes: RouteObject = {
     {
       index: true,
       Component: lazy(() => import("./pages/GamesList")),
-    }
+    },
+    {
+      path: "/games/:id",
+      Component: lazy(() => import("./pages/GameDetails")),
+    },
   ]
 }
