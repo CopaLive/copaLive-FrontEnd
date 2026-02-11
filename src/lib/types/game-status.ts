@@ -20,7 +20,7 @@ export const GAME_STATUS = {
 } as const;
 
 export const GAME_STATUS_LABELS: Record<GameStatus, string> = {
-  SCHEDULED: "Programmé",
+  SCHEDULED: "À venir",
   LIVE: "En direct",
   IN_PLAY: "En cours",
   PAUSED: "Mi-temps",

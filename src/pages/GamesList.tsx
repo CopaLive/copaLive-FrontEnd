@@ -2,6 +2,7 @@ import GameCard from "@/components/GameCard/GameCard";
 import { GAME_STAGES } from "@/lib/types/competition-stages";
 import type { Game, Team } from "@/lib/types/game";
 import { GAME_STATUS } from "@/lib/types/game-status";
+import { Link } from "react-router-dom";
 
 
 const mockGames: Game[] = [
@@ -43,12 +44,21 @@ export default function GamesList() {
   
   
   return (
-    <div className="">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      
+      <div className="mb-8">
+        <h2 className="text-4xl font-bold text-slate-900 mb-2">Matchs de la compétition</h2>
+        <p className="text-slate-600">Suivez tous les matchs en direct et consultez les résultats</p>
+      </div>
+      
       <div className="grid gap-6">
         {mockGames.map(game => (
-          <GameCard key={game.id} game={game} />
+          <Link to={`/games/${game.id}`}>
+            <GameCard key={game.id} game={game} />
+          </Link>
         ))}
       </div>
+      
     </div>
   );
 }

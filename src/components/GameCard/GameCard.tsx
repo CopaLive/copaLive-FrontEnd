@@ -13,6 +13,7 @@ import { GAME_STAGE_LABELS } from "@/lib/types/competition-stages";
 import GameBadge from "./GameBadge";
 import { isPendingGame } from "@/lib/utils/gameStatus";
 import { ChevronRight } from "lucide-react";
+import { Button } from "../ui/button";
 
 export default function GameCard(props: { game: Game }) {
   const { game } = props;
@@ -57,9 +58,11 @@ export default function GameCard(props: { game: Game }) {
         </div>
       </CardContent>
       <CardFooter>
-        <div className="mt-6 pt-4 border-t border-slate-200 flex items-center justify-center text-green-600 font-medium group-hover:text-green-700">
-          <span>Voir les détails</span>
-          <ChevronRight className="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" />
+        <div className="mt-6 pt-4 border-t border-slate-200 flex items-center justify-center text-green-600 font-medium group-hover:text-green-700 w-full">
+          <Button variant="ghost">
+            <span>Voir les détails</span>
+            <ChevronRight className="w-5 h-5 ml-1 group-hover:translate-x-1 transition-transform" />
+          </Button>
         </div>
       </CardFooter>
     </Card>
